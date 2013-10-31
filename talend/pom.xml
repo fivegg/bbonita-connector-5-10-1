@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.bonitasoft.connectors</groupId>
+    <artifactId>bonita-connectors</artifactId>
+    <version>5.10.1</version>
+  </parent>
+
+  <groupId>org.bonitasoft.connectors</groupId>
+  <artifactId>talend</artifactId>
+  <packaging>jar</packaging>
+
+  <name>Talend</name>
+
+  <dependencies>
+    <dependency>
+      <groupId>javacsv</groupId>
+      <artifactId>javacsv</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/libtest/javacsv.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>systemRoutines</groupId>
+      <artifactId>systemRoutines</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/libtest/systemRoutines.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>test_0_1</groupId>
+      <artifactId>test_0_1</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/libtest/test_0_1.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>userRoutines</groupId>
+      <artifactId>userRoutines</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/libtest/userRoutines.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.administrator</groupId>
+      <artifactId>webservices</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/lib/org.talend.administrator.webservices.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>javax.activation</groupId>
+      <artifactId>activation</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-discovery</groupId>
+      <artifactId>commons-discovery</artifactId>
+      <version>0.4</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.axis</groupId>
+      <artifactId>axis</artifactId>
+      <version>1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.axis</groupId>
+      <artifactId>axis-jaxrpc</artifactId>
+      <version>1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.axis</groupId>
+      <artifactId>axis-saaj</artifactId>
+      <version>1.4</version>
+    </dependency>
+    <dependency>
+      <groupId>axis</groupId>
+      <artifactId>axis-wsdl4j</artifactId>
+      <version>1.5.1</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.mail</groupId>
+      <artifactId>mail</artifactId>
+      <version>1.4.3</version>
+    </dependency>
+  </dependencies>
+
+</project>

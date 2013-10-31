@@ -1,0 +1,276 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>Email</connectorId>
+  <icon>email.png</icon>
+  <categories>
+    <category>
+      <name>Messaging</name>
+      <icon>org/bonitasoft/connectors/email/messaging.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setSmtpHost</setterName>
+      <required />
+      <parameters>
+        <string>smtp.gmail.com</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setSmtpPort</setterName>
+      <required />
+      <parameters>
+        <long>465</long>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setSslSupport</setterName>
+      <parameters>
+        <boolean>true</boolean>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setStarttlsSupport</setterName>
+      <parameters>
+        <boolean>false</boolean>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setUserName</setterName>
+      <required>password</required>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPassword</setterName>
+      <required>userName</required>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setFrom</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setTo</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setBcc</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setCc</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setSubject</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setHtml</setterName>
+      <parameters>
+        <boolean>true</boolean>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setMessage</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setHeaders</setterName>
+      <parameters>
+        <map />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setAttachments</setterName>
+      <parameters>
+        <list />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setCharset</setterName>
+      <parameters>
+        <string>utf-8</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setReplyTo</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setTimeout</setterName>
+      <parameters>
+        <long>30000</long>
+      </parameters>
+    </setter>
+  </inputs>
+  <pages>
+    <page>
+      <pageId>smtp</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>smtpHost</labelId>
+        </text>
+        <text>
+          <size>5</size>
+          <maxChar>5</maxChar>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <labelId>smtpPort</labelId>
+        </text>
+        <group>
+          <labelId>security</labelId>
+          <widgets>
+            <checkbox>
+              <name>ssl</name>
+              <value>false</value>
+              <setter reference="/connector/inputs/setter[3]"/>
+              <labelId>sslSupport</labelId>
+            </checkbox>
+            <checkbox>
+              <name>starttls</name>
+              <value>false</value>
+              <setter reference="/connector/inputs/setter[4]"/>
+              <labelId>starttlsSupport</labelId>
+            </checkbox>
+          </widgets>
+        </group>
+        <group>
+          <optional>true</optional>
+          <widgets>
+            <text>
+              <size>20</size>
+              <maxChar>20</maxChar>
+              <setter reference="/connector/inputs/setter[5]"/>
+              <labelId>userName</labelId>
+            </text>
+            <password>
+              <size>20</size>
+              <maxChar>20</maxChar>
+              <setter reference="/connector/inputs/setter[6]"/>
+              <labelId>password</labelId>
+            </password>
+          </widgets>
+          <labelId>auth</labelId>
+        </group>
+      </widgets>
+    </page>
+    <page>
+      <pageId>email</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>100</maxChar>
+          <setter reference="/connector/inputs/setter[7]"/>
+          <labelId>from</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>100</maxChar>
+          <setter reference="/connector/inputs/setter[8]"/>
+          <labelId>to</labelId>
+        </text>
+        <group>
+          <optional>true</optional>
+          <labelId>addresses</labelId>
+          <widgets>
+            <text>
+              <size>20</size>
+              <maxChar>100</maxChar>
+              <setter reference="/connector/inputs/setter[10]"/>
+              <labelId>cc</labelId>
+            </text>
+            <text>
+              <size>20</size>
+              <maxChar>100</maxChar>
+              <setter reference="/connector/inputs/setter[9]"/>
+              <labelId>bcc</labelId>
+            </text>
+            <text>
+              <size>20</size>
+              <maxChar>100</maxChar>
+              <setter reference="/connector/inputs/setter[17]"/>
+              <labelId>replayTo</labelId>
+            </text>
+          </widgets>
+        </group>
+        <text>
+          <size>20</size>
+          <maxChar>100</maxChar>
+          <setter reference="/connector/inputs/setter[11]"/>
+          <labelId>subject</labelId>
+        </text>
+        <textarea>
+          <rows>10</rows>
+          <columns>60</columns>
+          <maxChar>600</maxChar>
+          <maxCharPerRow>60</maxCharPerRow>
+          <setter reference="/connector/inputs/setter[13]"/>
+          <labelId>message</labelId>
+        </textarea>
+        <checkbox>
+          <name>html</name>
+          <value>false</value>
+          <setter reference="/connector/inputs/setter[12]"/>
+          <labelId>html</labelId>
+        </checkbox>
+        <list>
+          <maxRows>0</maxRows>
+          <labelId>attachments</labelId>
+          <setter reference="/connector/inputs/setter[15]"/>
+        </list>
+      </widgets>
+    </page>
+    <page>
+    	<pageId>advancedContent</pageId>
+    	<widgets>
+    	    <text>
+              <size>20</size>
+              <maxChar>100</maxChar>
+              <setter reference="/connector/inputs/setter[16]"/>
+              <labelId>charset</labelId>
+            </text>
+            <text>
+              <size>20</size>
+              <maxChar>100</maxChar>
+              <setter reference="/connector/inputs/setter[18]"/>
+              <labelId>timeout</labelId>
+            </text>
+            <array>
+              <labelId>headers</labelId>
+              <cols>2</cols>
+              <rows>0</rows>
+              <fixedCols>true</fixedCols>
+              <fixedRows>false</fixedRows>
+              <colsCaptions>
+                <string>name</string>
+                <string>value</string>
+              </colsCaptions>
+              <setter reference="/connector/inputs/setter[14]"/>
+            </array>
+          </widgets>
+    </page>
+  </pages>
+</connector>

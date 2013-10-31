@@ -1,0 +1,36 @@
+<connector>
+  <connectorId>GroovyFilter</connectorId>
+  <version>5.0</version>
+  <icon>scripting.png</icon>
+  <categories>
+    <category>
+      <name>Script</name>
+      <icon>org/bonitasoft/connectors/scripting/scripting.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setScript</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs/>
+  <pages>
+    <page>
+      <pageId>ScriptPage</pageId>
+      <widgets>
+        <textarea>
+          <rows>5</rows>
+          <columns>40</columns>
+          <maxChar>200</maxChar>
+          <maxCharPerRow>40</maxCharPerRow>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>script</labelId>
+        </textarea>
+      </widgets>
+    </page>
+  </pages>
+</connector>

@@ -1,0 +1,33 @@
+package rules
+
+import org.bonitasoft.connectors.drools.examples.agerules.Applicant;
+
+rule "Child"
+	salience 10
+	dialect "mvel"
+	when
+		a : Applicant( age < "10" )
+	then
+		System.out.println( "applying Child rule"); 		
+		a.setStatus( "Child" );
+end
+
+rule "Young"
+	salience 10
+	dialect "mvel"
+	when
+		a : Applicant( age >= "10" && age < "18" )
+	then
+		System.out.println( "applying Young rule"); 		
+		a.setStatus( "Young" );
+end
+
+rule "Adult"
+	salience 10
+	dialect "mvel"
+	when
+		a : Applicant( age >= "18" )
+	then
+		System.out.println( "applying Adult rule"); 	 		
+		a.setStatus( "Adult" );
+end

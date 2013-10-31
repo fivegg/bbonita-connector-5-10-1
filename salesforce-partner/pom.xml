@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>bonita-connectors</artifactId>
+    <groupId>org.bonitasoft.connectors</groupId>
+    <version>5.10.1</version>
+  </parent>
+
+  <groupId>org.bonitasoft.connectors</groupId>
+  <artifactId>salesforce-partner</artifactId>
+
+  <name>SalesForce</name>
+
+  <properties>
+    <sforce.test>NoTests</sforce.test>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>partner-18</groupId>
+      <artifactId>partner-18</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/lib/partner-18.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>com.force.api</groupId>
+      <artifactId>force-wsc</artifactId>
+      <version>22.0.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <includes>
+            <include>${sforce.test}</include>
+          </includes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <activation>
+        <property>
+          <name>bonita.connectors.salesforce.username</name>
+        </property>
+      </activation>
+      <properties>
+        <sforce.test>org/bonitasoft/connectors/salesforce/partner/SalesforceTests.java</sforce.test>
+      </properties>
+    </profile>
+  </profiles>
+
+</project>

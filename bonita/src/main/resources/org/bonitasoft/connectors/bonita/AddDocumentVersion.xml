@@ -1,0 +1,77 @@
+<connector>
+  <connectorId>AddDocumentVersion</connectorId>
+  <version>5.0</version>
+  <icon>bonita.png</icon>
+  <categories>
+    <category>
+      <name>Bonita</name>
+      <icon>org/bonitasoft/connectors/bonita.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setDocumentUUID</setterName>
+      <required></required>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setIsMajorVersion</setterName>
+      <required></required>
+      <parameters>
+        <boolean>false</boolean>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setFileName</setterName>
+      <required></required>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setContent</setterName>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs>
+    <getter>
+      <name>document</name>
+      <metadata/>
+    </getter>
+  </outputs>
+  <pages>
+    <page>
+      <pageId>DocumentInformation</pageId>
+      <widgets>
+        <text>
+          <labelId>documentUUID</labelId>
+          <setter reference="/connector/inputs/setter"/>
+          <size>20</size>
+          <maxChar>40</maxChar>
+        </text>
+        <checkbox>
+          <labelId>isMajorVersion</labelId>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <name>isMajorVersion</name>
+          <value>true</value>
+        </checkbox>
+        <text>
+          <labelId>fileName</labelId>
+          <setter reference="/connector/inputs/setter[3]"/>
+          <size>20</size>
+          <maxChar>40</maxChar>
+        </text>
+        <text>
+          <labelId>content</labelId>
+          <setter reference="/connector/inputs/setter[4]"/>
+          <size>20</size>
+          <maxChar>40</maxChar>
+        </text>
+      </widgets>
+    </page>
+  </pages>
+</connector>

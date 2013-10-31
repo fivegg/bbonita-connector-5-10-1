@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <taskdef name="for" classname="net.sf.antcontrib.logic.ForTask" classpathref="maven.runtime.classpath"/>
+  <mkdir dir="D:\source\bonita_dev\workspace\5.10.1\bonita-connectors\assembly\target/connectors"/>
+  <for param="connector" list="bonita,email,twitter,database,ldap,java,scripting,alfresco,webdav,talend,cxf,google,xwiki,jasper,sugar,drools,microsoft/exchange,microsoft/sharepoint,sap,sheetster,cmis,secure-webservice-cxf-2-4-0,salesforce-partner">
+    <sequential>
+      <mkdir dir="D:\source\bonita_dev\workspace\5.10.1\bonita-connectors\assembly\target/connectors/@{connector}"/>
+      <unzip dest="D:\source\bonita_dev\workspace\5.10.1\bonita-connectors\assembly\target/connectors/@{connector}">
+        <fileset dir="../@{connector}/target">
+          <include name="*.zip"/>
+        </fileset>
+      </unzip>
+    </sequential>
+  </for>
+  <zip basedir="D:\source\bonita_dev\workspace\5.10.1\bonita-connectors\assembly\target/connectors" destfile="D:\source\bonita_dev\workspace\5.10.1\bonita-connectors\assembly\target/assembly-5.10.1.zip"/>
+</target>
+</project>

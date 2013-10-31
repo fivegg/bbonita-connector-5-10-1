@@ -1,0 +1,102 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>GenericJDBCBatchConnector</connectorId>
+  <icon>database.png</icon>
+  <categories>
+    <category>
+      <name>Database</name>
+      <icon>org/bonitasoft/connectors/database/database.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setDriver</setterName>
+      <required />
+      <parameters>
+        <string>org.postgresql.Driver</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setUrl</setterName>
+      <required />
+      <parameters>
+        <string>jdbc:postgresql://localhost:5432/myDatabase</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setUsername</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPassword</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setScript</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setSeparator</setterName>
+      <parameters>
+        <string>;</string>
+      </parameters>
+    </setter>
+  </inputs>
+  <pages>
+    <page>
+      <pageId>db</pageId>
+      <widgets>
+        <text>
+          <size>30</size>
+          <maxChar>50</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>driver</labelId>
+        </text>
+        <text>
+          <size>30</size>
+          <maxChar>50</maxChar>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <labelId>url</labelId>
+        </text>
+        <text>
+          <size>30</size>
+          <maxChar>50</maxChar>
+          <setter reference="/connector/inputs/setter[3]"/>
+          <labelId>username</labelId>
+        </text>
+        <password>
+          <size>30</size>
+          <maxChar>50</maxChar>
+          <setter reference="/connector/inputs/setter[4]"/>
+          <labelId>password</labelId>
+        </password>
+      </widgets>
+    </page>
+    <page>
+      <pageId>qry</pageId>
+      <widgets>
+        <textarea>
+          <rows>10</rows>
+          <columns>60</columns>
+          <maxChar>600</maxChar>
+          <maxCharPerRow>60</maxCharPerRow>
+          <setter reference="/connector/inputs/setter[5]"/>
+          <labelId>script</labelId>
+        </textarea>
+        <text>
+          <size>30</size>
+          <maxChar>50</maxChar>
+          <setter reference="/connector/inputs/setter[6]"/>
+          <labelId>separator</labelId>
+        </text>
+      </widgets>
+    </page>
+  </pages>
+</connector>

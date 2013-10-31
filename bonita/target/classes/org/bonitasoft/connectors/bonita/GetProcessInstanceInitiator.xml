@@ -1,0 +1,38 @@
+<connector>
+  <connectorId>getProcessInstanceInitiator</connectorId>
+  <version>5.0</version>
+  <icon>bonita.png</icon>
+  <categories>
+    <category>
+      <name>Bonita</name>
+      <icon>org/bonitasoft/connectors/bonita/bonita.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setInstanceUUID</setterName>
+      <required />
+      <parameters>
+        <string>${processInstance.getUUID()}</string>
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs>
+    <getter>
+      <name>instanceInitiator</name>
+    </getter>
+  </outputs>
+  <pages>
+    <page>
+      <pageId>processInstanceSelection</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>instanceUUID</labelId>
+        </text>
+      </widgets>
+    </page>
+  </pages>
+</connector>

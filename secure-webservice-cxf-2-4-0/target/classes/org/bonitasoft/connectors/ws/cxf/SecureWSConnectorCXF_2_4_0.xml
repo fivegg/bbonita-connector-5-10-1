@@ -1,0 +1,234 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>SecureWSConnectorCXF_2_4_0</connectorId>
+  <icon>ws.png</icon>
+  <categories>
+    <category>
+      <name>WebServices</name>
+      <icon>org/ow2/bonita/connector/core/other.png</icon>
+    </category>
+  </categories>
+  <inputs>  
+    <setter>
+      <setterName>setServiceNS</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setServiceName</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPortName</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setEnveloppe</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setEndpointAddress</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setBinding</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setSoapAction</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setAuthUserName</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setAuthPassword</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setBuildResponseDocumentEnveloppe</setterName>
+      <parameters>
+        <boolean>true</boolean>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setBuildResponseDocumentBody</setterName>
+      <parameters>
+        <boolean>true</boolean>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPrintRequestAndResponse</setterName>
+      <parameters>
+        <boolean>false</boolean>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setReadTimeout</setterName>
+      <parameters>
+        <long>-1</long>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setConnectionTimeout</setterName>
+      <parameters>
+        <long>-1</long>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setHttpHeaders</setterName>
+      <parameters>
+        <map />
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs>
+    <getter>
+      <name>sourceResponse</name>
+    </getter>
+    <getter>
+      <name>responseDocumentEnveloppe</name>
+      <metadata>
+	    <property name="xml_namespace" value="http://www.w3.org/2001/12/soap-envelope" />
+	    <property name="xml_element" value="Envelope" />
+      </metadata>
+    </getter>
+    <getter>
+      <name>responseDocumentBody</name>
+    </getter>
+  </outputs>
+  <pages>
+    <page>
+      <pageId>configuration</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[8]"/>
+          <labelId>authUserName</labelId>
+        </text>
+        <password>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[9]"/>
+          <labelId>authPassword</labelId>
+        </password>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>serviceNS</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <labelId>serviceName</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[3]"/>
+          <labelId>portName</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[5]"/>
+          <labelId>endpointAddress</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[6]"/>
+          <labelId>binding</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[7]"/>
+          <labelId>soapAction</labelId>
+        </text>
+        <checkbox>
+          <name>buildResponseDocumentEnveloppe</name>
+          <value>true</value>
+          <setter reference="/connector/inputs/setter[10]"/>
+          <labelId>buildResponseDocumentEnveloppe</labelId>
+        </checkbox>
+        <checkbox>
+          <name>buildResponseDocumentBody</name>
+          <value>true</value>
+          <setter reference="/connector/inputs/setter[11]"/>
+          <labelId>buildResponseDocumentBody</labelId>
+        </checkbox>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[13]"/>
+          <labelId>readTimeout</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[14]"/>
+          <labelId>connectionTimeout</labelId>
+        </text>
+        <checkbox>
+          <name>printRequestAndResponse</name>
+          <value>false</value>
+          <setter reference="/connector/inputs/setter[12]"/>
+          <labelId>printRequestAndResponse</labelId>
+        </checkbox>
+      </widgets>
+    </page>
+    <page>
+      <pageId>body</pageId>
+      <widgets>
+        <array>
+          <labelId>httpHeaders</labelId>
+          <cols>2</cols>
+          <rows>0</rows>
+          <fixedCols>true</fixedCols>
+          <fixedRows>false</fixedRows>
+          <colsCaptions>
+            <string>name</string>
+            <string>value</string>
+          </colsCaptions>
+          <setter reference="/connector/inputs/setter[15]"/>
+        </array>
+        <textarea>
+          <rows>10</rows>
+          <columns>60</columns>
+          <maxChar>600</maxChar>
+          <maxCharPerRow>60</maxCharPerRow>
+          <setter reference="/connector/inputs/setter[4]"/>
+          <labelId>enveloppe</labelId>
+        </textarea>
+      </widgets>
+    </page>
+  </pages>
+</connector>

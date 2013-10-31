@@ -1,0 +1,38 @@
+<connector>
+  <connectorId>getUser</connectorId>
+  <version>5.0</version>
+  <icon>bonita.png</icon>
+  <categories>
+    <category>
+      <name>Bonita</name>
+      <icon>org/bonitasoft/connectors/bonita/bonita.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setUsername</setterName>
+      <required />
+      <parameters>
+        <string>${loggedUser}</string>
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs>
+    <getter>
+      <name>user</name>
+    </getter>
+  </outputs>
+  <pages>
+    <page>
+      <pageId>EnterAUsername</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>username</labelId>
+        </text>
+      </widgets>
+    </page>
+  </pages>
+</connector>

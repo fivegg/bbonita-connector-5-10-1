@@ -1,0 +1,78 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>GoogleCalendar - DeleteEvents</connectorId>
+  <categories>
+    <category>
+      <name>Google</name>
+      <icon>org/bonitasoft/connectors/googlecalendar/google.png</icon>
+    </category>
+  </categories>
+  <icon>google.png</icon>
+  <inputs>
+    <setter>
+      <setterName>setUserEmail</setterName>
+      <required></required>
+      <parameters>
+        <string>your_user@gmail.com</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPassword</setterName>
+      <required></required>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setCalendarUrl</setterName>
+      <required></required>
+      <parameters>
+        <string>http://www.google.com/calendar/feeds/your_gmail_address/private/full</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setSearchString</setterName>
+      <required></required>
+      <parameters>
+        <string>(event title to delete)</string>
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs/>
+  <pages>
+    <page>
+      <pageId>GoogleCalendarParameters</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>userEmail</labelId>
+        </text>
+        <password>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <labelId>password</labelId>
+        </password>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[3]"/>
+          <labelId>calendarUrl</labelId>
+        </text>
+      </widgets>
+    </page>
+    <page>
+      <pageId>FunctionParameters</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[4]"/>
+          <labelId>searchString</labelId>
+        </text>
+      </widgets>
+    </page>
+  </pages>
+</connector>

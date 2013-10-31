@@ -1,0 +1,170 @@
+<connector>
+  <version>5.0</version>    
+  <connectorId>XWiki-UpdateMetaData</connectorId>
+  <icon>xwiki.png</icon>
+  <categories>
+    <category>
+      <name>XWiki</name>
+      <icon>org/bonitasoft/connectors/xwiki/xwiki.png</icon>
+    </category>
+  </categories>
+  
+  <inputs>
+    <setter>
+      <setterName>setHost</setterName>
+      <required></required>
+      <parameters>
+        <string>localhost</string>
+      </parameters>
+    </setter>
+     
+    <setter>
+      <setterName>setPort</setterName>
+      <required></required>
+      <parameters>
+        <int>80</int>
+      </parameters>
+    </setter>
+    
+    <setter>
+      <setterName>setUsername</setterName>
+      <required>password</required>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPassword</setterName>
+      <required>username</required>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setWikiName</setterName>
+      <required></required>
+      <parameters>
+        <string>xwiki</string>
+      </parameters>
+    </setter>
+    
+    <setter>
+      <setterName>setSpaceName</setterName>
+      <required></required>
+      <parameters>
+        <string>Main</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPageName</setterName>
+      <required></required>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setClassName</setterName>
+      <required></required>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPropertyName</setterName>
+      <required></required>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPropertyValue</setterName>
+      <required></required>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+  
+  </inputs>
+  <outputs>
+    <getter>
+      <name>response</name>
+    </getter>
+    <getter>
+      <name>status</name>
+    </getter>
+  </outputs>
+  <pages>
+    <page>
+      <pageId>WikiParameters</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>host</labelId>
+        </text>
+        
+        <text>
+          <size>20</size>
+          <maxChar>5</maxChar>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <labelId>port</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[3]"/>
+          <labelId>username</labelId>
+        </text>
+        <password>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[4]"/>
+          <labelId>password</labelId>
+        </password>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[5]"/>
+          <labelId>wikiname</labelId>
+        </text>
+        
+      </widgets>
+    </page>
+    <page>
+      <pageId>FunctionParameters</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[6]"/>
+          <labelId>spaceName</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[7]"/>
+          <labelId>pageName</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[8]"/>
+          <labelId>className</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[9]"/>
+          <labelId>propertyName</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[10]"/>
+          <labelId>propertyValue</labelId>
+        </text>
+      </widgets>
+    </page>
+  </pages>
+</connector>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <taskdef name="if" classname="net.sf.antcontrib.logic.IfTask" classpathref="maven.runtime.classpath"/>
+  <if>
+    <equals arg2="bonita-connectors" arg1="sugar"/>
+    <then>
+      <echo message="Building parent. Skipping libs copy."/>
+    </then>
+    <else>
+      <copy todir="D:\source\bonita_dev\workspace\5.10.1\bonita-connectors\sugar\target/sugar-5.10.1/lib" overwrite="true" failonerror="false">
+        <fileset dir="lib">
+          <include name="*"/>
+        </fileset>
+        <fileset dir="D:\source\bonita_dev\workspace\5.10.1\bonita-connectors\sugar\target/lib">
+          <include name="*"/>
+        </fileset>
+      </copy>
+      <copy todir="D:\source\bonita_dev\workspace\5.10.1\bonita-connectors\sugar\target/sugar-5.10.1" overwrite="true" failonerror="false">
+        <fileset dir="target">
+          <include name="sugar-5.10.1.jar"/>
+        </fileset>
+      </copy>
+      <zip basedir="D:\source\bonita_dev\workspace\5.10.1\bonita-connectors\sugar\target/sugar-5.10.1" destfile="D:\source\bonita_dev\workspace\5.10.1\bonita-connectors\sugar\target/sugar-5.10.1.zip"/>
+    </else>
+  </if>
+</target>
+</project>

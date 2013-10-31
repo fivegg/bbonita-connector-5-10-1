@@ -1,0 +1,70 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>JavaExecutor</connectorId>
+  <icon>java.png</icon>
+  <categories>
+    <category>
+      <name>Java</name>
+      <icon>org/bonitasoft/connectors/java/java.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setClassName</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setFields</setterName>
+      <parameters>
+        <map />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setConstructorParameters</setterName>
+      <parameters>
+        <list />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setMethods</setterName>
+      <required />
+      <parameters>
+        <list />
+      </parameters>
+    </setter>
+  </inputs>
+  <pages>
+    <page>
+      <pageId>java</pageId>
+      <widgets>
+        <text>
+          <size>30</size>
+          <maxChar>100</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>className</labelId>
+        </text>
+        <text>
+          <size>30</size>
+          <maxChar>50</maxChar>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <labelId>fields</labelId>
+        </text>
+        <text>
+          <size>50</size>
+          <maxChar>100</maxChar>
+          <setter reference="/connector/inputs/setter[3]"/>
+          <labelId>constructorParameters</labelId>
+        </text>
+        <text>
+          <size>50</size>
+          <maxChar>100</maxChar>
+          <setter reference="/connector/inputs/setter[4]"/>
+          <labelId>methods</labelId>
+        </text>
+      </widgets>
+    </page>
+  </pages>
+</connector>

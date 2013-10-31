@@ -1,0 +1,51 @@
+<connector>
+  <connectorId>StatelessKnowledgeSession - Execute</connectorId>
+  <version>5.0</version>
+  <icon>drools.gif</icon>
+  <categories>
+    <category>
+      <name>Drools</name>
+      <icon>org/bonitasoft/connectors/drools/drools.gif</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setDrlFilePath</setterName>
+      <required></required>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setListOfFacts</setterName>
+      <required></required>
+      <parameters>
+        <list/>
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs>
+    <getter>
+      <name>revisedListOfFacts</name>
+    </getter>
+  </outputs>
+  <pages>
+    <page>
+      <pageId>Parameters</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>drlFilePath</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <labelId>listOfFacts</labelId>
+        </text>
+      </widgets>
+    </page>
+  </pages>
+</connector>

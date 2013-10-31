@@ -1,0 +1,63 @@
+/**
+ * Copyright (C) 2009 BonitaSoft S.A.
+ * BonitaSoft, 31 rue Gustave Eiffel - 38000 Grenoble
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2.0 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+package org.bonitasoft.connectors.alfresco;
+
+import java.util.List;
+
+import org.bonitasoft.connectors.alfresco.common.AlfrescoConnector;
+import org.bonitasoft.connectors.alfresco.common.AlfrescoRestClient;
+import org.ow2.bonita.connector.core.ConnectorError;
+
+/**
+ * 
+ * @author Jordi Anguela
+ *
+ */
+public class UpdateCheckedOutFileConnector extends AlfrescoConnector {
+
+	private String fileAbsolutePath;
+	private String description;
+	private String mimeType;
+	private String checkedOutFileId;
+
+	public void setFileAbsolutePath(String fileAbsolutePath) {
+		this.fileAbsolutePath = fileAbsolutePath;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public void setMimeType(String mimeType) {
+		this.mimeType = mimeType;
+	}
+
+	public void setCheckedOutFileId(String checkedOutFileId) {
+		this.checkedOutFileId = checkedOutFileId;
+	}
+
+	@Override
+	protected List<ConnectorError> validateFunctionParameters() {
+	  return null;
+	}
+
+	@Override
+	protected void executeFunction(AlfrescoRestClient alfrescoClient) throws Exception {
+		response = alfrescoClient.updateCheckedOutFile(fileAbsolutePath, description, mimeType, checkedOutFileId);
+	}
+
+}

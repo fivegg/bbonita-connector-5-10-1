@@ -1,0 +1,165 @@
+<connector>
+  <connectorId>CreateCalendarItem</connectorId>
+  <version>5.0</version>
+  <icon>exchange.png</icon>
+  <categories>
+    <category>
+      <name>Exchange</name>
+      <icon>org/bonitasoft/connectors/microsoft/exchange/exchange.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setUsername</setterName>
+      <required></required>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPassword</setterName>
+      <required></required>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setServerLocation</setterName>
+      <required></required>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>     
+    <setter>
+      <setterName>setSubject</setterName>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setBody</setterName>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setStartTime</setterName>
+      <parameters>
+        <string>yyyy-MM-ddTHH:mm:ss</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setEndTime</setterName>
+      <parameters>
+        <string>yyyy-MM-ddTHH:mm:ss</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setLocation</setterName>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setRequiredAttendeesEmails</setterName>
+      <required></required>
+      <parameters>
+        <string>email1@email.com, email2@email.com</string>
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs>
+    <getter>
+      <name>statusCode</name>
+    </getter>
+    <getter>
+      <name>statusText</name>
+    </getter>
+    <getter>
+      <name>response</name>
+    </getter>
+  </outputs>
+  <pages>
+    <page>
+      <pageId>ExchangesServerParameters</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>username</labelId>
+        </text>
+        <password>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <labelId>password</labelId>
+        </password>
+        <select>
+          <values>
+            <entry>
+              <string>Europe, Middle East and Africa</string>
+              <string>emea</string>
+            </entry>
+            <entry>
+              <string>North America</string>
+              <string>northamerica</string>
+            </entry>
+            <entry>
+              <string>Asia-Pacific</string>
+              <string>apac</string>
+            </entry>
+          </values>
+          <editable>false</editable>
+          <top>
+              <string>Europe, Middle East and Africa</string>
+              <string>emea</string>
+          </top>
+          <setter reference="/connector/inputs/setter[3]"/>
+          <labelId>serverLocation</labelId>
+        </select>         
+      </widgets>
+    </page>
+    <page>
+      <pageId>NewCalendarItemParameters</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[4]"/>
+          <labelId>subject</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[5]"/>
+          <labelId>body</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[6]"/>
+          <labelId>startTime</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[7]"/>
+          <labelId>endTime</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[8]"/>
+          <labelId>location</labelId>
+        </text>
+        <text>
+          <size>40</size>
+          <maxChar>200</maxChar>
+          <setter reference="/connector/inputs/setter[9]"/>
+          <labelId>requiredAttendeesEmails</labelId>
+        </text>
+      </widgets>
+    </page>
+  </pages>
+</connector>

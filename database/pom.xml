@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.bonitasoft.connectors</groupId>
+  <artifactId>database</artifactId>
+  <packaging>jar</packaging>
+
+  <name>Database</name>
+
+  <parent>
+    <groupId>org.bonitasoft.connectors</groupId>
+    <artifactId>bonita-connectors</artifactId>
+    <version>5.10.1</version>
+  </parent>
+
+  <dependencies>
+    <dependency>
+      <groupId>hsqldb</groupId>
+      <artifactId>hsqldb</artifactId>
+      <version>1.8.0.7</version>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.6</version>
+    </dependency>
+    <dependency>
+      <groupId>postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>9.0-801.jdbc3</version>
+    </dependency>
+    <dependency>
+      <groupId>net.sourceforge.jtds</groupId>
+      <artifactId>jtds</artifactId>
+      <version>1.2.4</version>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle</groupId>
+      <artifactId>ojdbc</artifactId>
+      <version>5</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/lib/ojdbc5.jar</systemPath>
+    </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <!-- the version of h2 must be the same as the h2 dependency of bonita-server -->
+      <version>1.2.139</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <includes>
+            <include>${bonita.test}</include>
+          </includes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <activation>
+        <property>
+          <name>environment</name>
+          <value>bonitasoft</value>
+        </property>
+      </activation>
+      <properties>
+        <bonita.test>org/bonitasoft/connectors/database/DatabaseTests.java</bonita.test>
+      </properties>
+    </profile>
+  </profiles>
+
+</project>

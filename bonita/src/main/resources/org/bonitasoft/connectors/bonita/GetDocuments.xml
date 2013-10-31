@@ -1,0 +1,44 @@
+<connector>
+  <connectorId>GetDocuments</connectorId>
+  <version>5.0</version>
+  <icon>bonita.png</icon>
+  <categories>
+    <category>
+      <name>Bonita</name>
+      <icon>org/bonitasoft/connectors/bonita.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setDocumentUUIDs</setterName>
+      <required></required>
+      <parameters>
+        <list/>
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs>
+    <getter>
+      <name>documentList</name>
+      <metadata/>
+    </getter>
+  </outputs>
+  <pages>
+    <page>
+      <pageId>DocumentInformation</pageId>
+      <widgets>
+        <array>
+          <labelId>documentUUIDs</labelId>
+          <setter reference="/connector/inputs/setter"/>
+          <cols>1</cols>
+          <rows>1</rows>
+          <fixedCols>true</fixedCols>
+          <fixedRows>false</fixedRows>
+          <colsCaptions>
+            <string>documentUUID</string>
+          </colsCaptions>
+        </array>
+      </widgets>
+    </page>
+  </pages>
+</connector>

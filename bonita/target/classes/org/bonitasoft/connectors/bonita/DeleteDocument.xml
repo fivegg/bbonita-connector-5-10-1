@@ -1,0 +1,52 @@
+<connector>
+  <connectorId>DeleteDocument</connectorId>
+  <version>5.0</version>
+  <icon>bonita.png</icon>
+  <categories>
+    <category>
+      <name>Bonita</name>
+      <icon>org/bonitasoft/connectors/bonita.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setDocumentUUID</setterName>
+      <required></required>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setDeleteAllVersion</setterName>
+      <required></required>
+      <parameters>
+        <boolean>true</boolean>
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs>
+    <getter>
+      <name>success</name>
+      <metadata/>
+    </getter>
+  </outputs>
+  <pages>
+    <page>
+      <pageId>DocumentInformation</pageId>
+      <widgets>
+        <text>
+          <labelId>documentUUID</labelId>
+          <setter reference="/connector/inputs/setter"/>
+          <size>20</size>
+          <maxChar>40</maxChar>
+        </text>
+        <checkbox>
+          <labelId>deleteAllVersion</labelId>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <name>deleteAllVersion</name>
+          <value>true</value>
+        </checkbox>
+      </widgets>
+    </page>
+  </pages>
+</connector>

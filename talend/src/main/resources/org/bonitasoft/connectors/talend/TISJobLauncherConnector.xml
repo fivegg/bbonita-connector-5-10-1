@@ -1,0 +1,71 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>TISJobLauncher</connectorId>
+  <icon>talend.png</icon>
+  <categories>
+    <category>
+      <name>Talend</name>
+      <icon>org/bonitasoft/connectors/talend/talend.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setWsURL</setterName>
+      <required/>
+      <parameters>
+        <string>http://localhost:8080/org.talend.administrator/services/AdministratorWebService?wsdl</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setLogin</setterName>
+      <required/>
+      <parameters>
+        <string/>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPassword</setterName>
+      <required/>
+      <parameters>
+        <string/>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setTaskId</setterName>
+      <parameters>
+        <int>1</int>
+      </parameters>
+    </setter>
+  </inputs>
+  <pages>
+    <page>
+      <pageId>job</pageId>
+      <widgets>
+        <text>
+          <size>50</size>
+          <maxChar>400</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>wsURL</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <labelId>login</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[3]"/>
+          <labelId>password</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[4]"/>
+          <labelId>taskId</labelId>
+        </text>
+      </widgets>
+    </page>
+  </pages>
+</connector>

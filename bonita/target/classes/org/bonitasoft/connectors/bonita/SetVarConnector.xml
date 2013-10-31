@@ -1,0 +1,45 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>SetVariable</connectorId>
+  <icon>bonita.png</icon>
+  <categories>
+    <category>
+      <name>Bonita</name>
+      <icon>org/bonitasoft/connectors/bonita/bonita.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setVariableName</setterName>
+      <required></required>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setValue</setterName>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+  </inputs>
+  <pages>
+    <page>
+      <pageId>var</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>name</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>50</maxChar>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <labelId>value</labelId>
+        </text>
+      </widgets>
+    </page>
+  </pages>
+</connector>

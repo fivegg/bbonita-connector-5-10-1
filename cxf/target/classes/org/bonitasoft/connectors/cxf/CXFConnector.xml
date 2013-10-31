@@ -1,0 +1,117 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>CXFClient</connectorId>
+  <icon>apache.png</icon>
+  <categories>
+    <category>
+      <name>WebServices</name>
+      <icon>org/ow2/bonita/connector/core/other.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setTargetNS</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setServiceName</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPortName</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setRequest</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setEndpointAddress</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setBinding</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setSoapAction</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs>
+    <getter>
+      <name>response</name>
+    </getter>
+  </outputs>
+  <pages>
+    <page>
+      <pageId>cxf</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>targetNS</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <labelId>serviceName</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[3]"/>
+          <labelId>portName</labelId>
+        </text>
+        <textarea>
+          <rows>10</rows>
+          <columns>60</columns>
+          <maxChar>600</maxChar>
+          <maxCharPerRow>60</maxCharPerRow>
+          <setter reference="/connector/inputs/setter[4]"/>
+          <labelId>request</labelId>
+        </textarea>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[5]"/>
+          <labelId>endpointAddress</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[6]"/>
+          <labelId>binding</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[7]"/>
+          <labelId>soapAction</labelId>
+        </text>
+      </widgets>
+    </page>
+  </pages>
+</connector>

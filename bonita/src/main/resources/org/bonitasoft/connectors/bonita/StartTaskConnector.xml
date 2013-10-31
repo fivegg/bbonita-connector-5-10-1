@@ -1,0 +1,32 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>StartTask</connectorId>
+  <icon>bonita.png</icon>
+  <categories>
+    <category>
+      <name>Bonita</name>
+      <icon>org/bonitasoft/connectors/bonita/bonita.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setActivityName</setterName>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+  </inputs>
+  <pages>
+    <page>
+      <pageId>task</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>name</labelId>
+        </text>
+      </widgets>
+    </page>
+  </pages>
+</connector>

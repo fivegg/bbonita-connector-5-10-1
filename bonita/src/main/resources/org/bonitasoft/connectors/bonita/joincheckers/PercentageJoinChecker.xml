@@ -1,0 +1,35 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>PercentageJoinChecker</connectorId>
+  <icon>bonita.png</icon>
+  <categories>
+    <category>
+      <name>Bonita</name>
+      <icon>org/bonitasoft/connectors/bonita/bonita.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setPercentage</setterName>
+      <required />
+      <parameters>
+        <double>0.75</double>
+      </parameters>
+    </setter>
+  </inputs>
+  <pages>
+    <page>
+      <pageId>activity</pageId>
+      <widgets>
+        <textarea>
+          <rows>10</rows>
+          <columns>60</columns>
+          <maxChar>600</maxChar>
+          <maxCharPerRow>60</maxCharPerRow>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>percentage</labelId>
+        </textarea>
+      </widgets>
+    </page>
+  </pages>
+</connector>

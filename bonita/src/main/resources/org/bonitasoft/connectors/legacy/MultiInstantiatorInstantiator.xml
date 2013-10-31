@@ -1,0 +1,47 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>MultiInstantiatorInstantiator</connectorId>
+  <icon>bonita4.png</icon>
+  <categories>
+    <category>
+      <name>Bonita</name>
+      <icon>org/bonitasoft/connectors/bonita.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setClassName</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setVariableName</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs/>
+  <pages>
+    <page>
+      <pageId>Instantiator</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>className</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <labelId>variableName</labelId>
+        </text>
+      </widgets>
+    </page>
+  </pages>
+</connector>

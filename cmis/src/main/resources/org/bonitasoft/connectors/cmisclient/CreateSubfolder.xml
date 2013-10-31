@@ -1,0 +1,127 @@
+<connector>
+  <connectorId>createSubfolder</connectorId>
+  <version>5.0</version>
+  <icon>cmis.png</icon>
+  <categories>
+    <category>
+      <name>CMIS</name>
+      <icon>org/bonitasoft/connectors/cmisclient/cmis.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setUsername</setterName>
+      <required />
+      <parameters>
+        <string>admin</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPassword</setterName>
+      <required />
+      <parameters>
+        <string>admin</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setUrl</setterName>
+      <required />
+      <parameters>
+        <string>http://cmis.alfresco.com/service/cmis</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setBinding_type</setterName>
+      <required />
+      <parameters>
+        <string>ATOM</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setRepositoryName</setterName>
+      <required />
+      <parameters>
+        <string>Main Repository</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setParentFolderPath</setterName>
+      <required />
+      <parameters>
+        <string>/</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setSubfolderName</setterName>
+      <required />
+      <parameters>
+        <string>Bonita</string>
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs/>
+  <pages>
+    <page>
+      <pageId>ServerInformations</pageId>
+      <widgets>
+        <text>
+          <labelId>username</labelId>
+          <setter reference="/connector/inputs/setter"/>
+          <size>20</size>
+          <maxChar>40</maxChar>
+        </text>
+        <password>
+          <labelId>password</labelId>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <size>20</size>
+          <maxChar>40</maxChar>
+        </password>
+        <text>
+          <labelId>url</labelId>
+          <setter reference="/connector/inputs/setter[3]"/>
+          <size>20</size>
+          <maxChar>40</maxChar>
+        </text>
+        <select>
+          <labelId>binding_type</labelId>
+          <setter reference="/connector/inputs/setter[4]"/>
+          <values class="tree-map">
+            <no-comparator/>
+            <entry>
+              <string>ATOM</string>
+              <string>ATOM</string>
+            </entry>
+            <entry>
+              <string>WebService</string>
+              <string>WebService</string>
+            </entry>
+          </values>
+          <editable>false</editable>
+        </select>
+      </widgets>
+    </page>
+    <page>
+      <pageId>FolderInformations</pageId>
+      <widgets>
+        <text>
+          <labelId>repositoryName</labelId>
+          <setter reference="/connector/inputs/setter[5]"/>
+          <size>20</size>
+          <maxChar>40</maxChar>
+        </text>
+        <text>
+          <labelId>parentFolderPath</labelId>
+          <setter reference="/connector/inputs/setter[6]"/>
+          <size>20</size>
+          <maxChar>40</maxChar>
+        </text>
+        <text>
+          <labelId>subfolderName</labelId>
+          <setter reference="/connector/inputs/setter[7]"/>
+          <size>20</size>
+          <maxChar>40</maxChar>
+        </text>
+      </widgets>
+    </page>
+  </pages>
+</connector>

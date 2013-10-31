@@ -1,0 +1,156 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>TwitterDirectMessageOAuth</connectorId>
+  <icon>twitter.png</icon>
+  <categories>
+    <category>
+      <name>Social</name>
+      <icon>org/bonitasoft/connectors/social.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setProxyHost</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setProxyPort</setterName>
+      <parameters>
+        <int>0</int>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setProxyUser</setterName>
+      <required>proxyPass</required>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setProxyPass</setterName>
+      <required>proxyUser</required>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setConsumerKey</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setConsumerSecret</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setAccessToken</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setAccessTokenSecret</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setMessage</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setRecipientId</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+  </inputs>
+  <pages>
+    <page>
+      <pageId>msg</pageId>
+      <widgets>
+        <password>
+          <size>20</size>
+          <maxChar>50</maxChar>
+          <setter reference="/connector/inputs/setter[5]"/>
+          <labelId>consumerKey</labelId>
+        </password>
+        <password>
+          <size>20</size>
+          <maxChar>50</maxChar>
+          <setter reference="/connector/inputs/setter[6]"/>
+          <labelId>consumerSecret</labelId>
+        </password>
+        <password>
+          <size>20</size>
+          <maxChar>50</maxChar>
+          <setter reference="/connector/inputs/setter[7]"/>
+          <labelId>accessToken</labelId>
+        </password>
+        <password>
+          <size>20</size>
+          <maxChar>50</maxChar>
+          <setter reference="/connector/inputs/setter[8]"/>
+          <labelId>accessTokenSecret</labelId>
+        </password>
+        <textarea>
+          <rows>7</rows>
+          <columns>20</columns>
+          <maxChar>140</maxChar>
+          <maxCharPerRow>14</maxCharPerRow>
+          <setter reference="/connector/inputs/setter[9]"/>
+          <labelId>message</labelId>
+        </textarea>
+        <text>
+          <size>20</size>
+          <maxChar>50</maxChar>
+          <setter reference="/connector/inputs/setter[10]"/>
+          <labelId>recipientId</labelId>
+        </text>
+        <group>
+          <optional>true</optional>
+          <widgets>
+            <text>
+              <size>20</size>
+              <maxChar>50</maxChar>
+              <setter reference="/connector/inputs/setter"/>
+              <labelId>proxyHost</labelId>
+            </text>
+            <text>
+              <size>5</size>
+              <maxChar>5</maxChar>
+              <setter reference="/connector/inputs/setter[2]"/>
+              <labelId>proxyPort</labelId>
+            </text>
+            <text>
+              <size>20</size>
+              <maxChar>50</maxChar>
+              <setter reference="/connector/inputs/setter[3]"/>
+              <labelId>proxyUser</labelId>
+            </text>
+            <password>
+              <size>20</size>
+              <maxChar>50</maxChar>
+              <setter reference="/connector/inputs/setter[4]"/>
+              <labelId>proxyPass</labelId>
+            </password>
+          </widgets>
+          <labelId>proxySettings</labelId>
+        </group>
+      </widgets>
+    </page>
+  </pages>
+</connector>

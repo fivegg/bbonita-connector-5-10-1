@@ -1,0 +1,107 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>SugarCRM - GetAccountOpportunities</connectorId>
+  <icon>sugar.png</icon>
+  <categories>
+    <category>
+      <name>Sugar</name>
+      <icon>org/bonitasoft/connectors/sugar/sugar.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setSugarSoapPort</setterName>
+      <required/>
+      <parameters>
+        <string>http://127.0.0.1:8080/sugarcrm/service/v2/soap.php</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setUser</setterName>
+      <required/>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPassword</setterName>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setApplicationName</setterName>
+      <required/>
+      <parameters>
+        <string>myAppName</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setAccountId</setterName>
+      <required/>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setAccountName</setterName>
+      <required/>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs>
+    <getter>
+      <name>response</name>
+    </getter>
+  </outputs>   
+  <pages>
+    <page>
+      <pageId>SugarConfiguration</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>sugarSoapPort</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <labelId>user</labelId>
+        </text>
+        <password>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[3]"/>
+          <labelId>password</labelId>
+        </password>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[4]"/>
+          <labelId>applicationName</labelId>
+        </text>
+      </widgets>
+    </page>        
+    <page>
+      <pageId>Parameters</pageId>
+      <widgets>        
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[5]"/>
+          <labelId>accountId</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[6]"/>
+          <labelId>accountName</labelId>
+        </text>
+      </widgets>
+    </page>
+  </pages>
+</connector>

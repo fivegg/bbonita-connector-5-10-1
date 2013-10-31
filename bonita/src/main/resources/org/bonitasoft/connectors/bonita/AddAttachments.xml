@@ -1,0 +1,40 @@
+<connector>
+  <connectorId>BS-AddAttachments</connectorId>
+  <version>5.0</version>
+  <icon>bonita.png</icon>
+  <categories>
+    <category>
+      <name>Bonita</name>
+	  <icon>org/bonitasoft/connectors/bonita.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setAttachments</setterName>
+      <required />
+      <parameters>
+        <list />
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs/>
+  <pages>
+    <page>
+      <pageId>main</pageId>
+      <widgets>
+        <array>
+          <cols>2</cols>
+          <rows>1</rows>
+          <fixedCols>true</fixedCols>
+          <fixedRows>false</fixedRows>
+          <colsCaptions>
+            <string>attachmentName</string>
+            <string>filePath</string>
+          </colsCaptions>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>attachments</labelId>
+        </array>
+      </widgets>
+    </page>
+  </pages>
+</connector>

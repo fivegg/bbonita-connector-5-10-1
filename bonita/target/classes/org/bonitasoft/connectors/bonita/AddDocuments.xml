@@ -1,0 +1,45 @@
+<connector>
+  <connectorId>AddDocuments</connectorId>
+  <version>5.0</version>
+  <icon>bonita.png</icon>
+  <categories>
+    <category>
+      <name>Bonita</name>
+      <icon>org/bonitasoft/connectors/bonita.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setDocuments</setterName>
+      <required></required>
+      <parameters>
+        <list/>
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs>
+    <getter>
+      <name>documentList</name>
+      <metadata/>
+    </getter>
+  </outputs>
+  <pages>
+    <page>
+      <pageId>DocumentInformation</pageId>
+      <widgets>
+        <array>
+          <labelId>documents</labelId>
+          <setter reference="/connector/inputs/setter"/>
+          <cols>2</cols>
+          <rows>1</rows>
+          <fixedCols>true</fixedCols>
+          <fixedRows>false</fixedRows>
+          <colsCaptions>
+            <string>Name</string>
+            <string>File path</string>
+          </colsCaptions>
+        </array>
+      </widgets>
+    </page>
+  </pages>
+</connector>

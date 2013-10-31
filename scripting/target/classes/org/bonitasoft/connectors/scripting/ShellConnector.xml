@@ -1,0 +1,40 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>ShellLauncher</connectorId>
+  <icon>shell.png</icon>
+  <categories>
+    <category>
+      <name>Script</name>
+      <icon>org/bonitasoft/connectors/scripting/scripting.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setShell</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs>
+    <getter>
+      <name>result</name>
+    </getter>
+  </outputs>
+  <pages>
+    <page>
+      <pageId>script</pageId>
+      <widgets>
+        <textarea>
+          <rows>10</rows>
+          <columns>60</columns>
+          <maxChar>600</maxChar>
+          <maxCharPerRow>60</maxCharPerRow>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>shell</labelId>
+        </textarea>
+      </widgets>
+    </page>
+  </pages>
+</connector>

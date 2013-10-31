@@ -1,0 +1,103 @@
+<connector>
+  <connectorId>BS-Sheetster-GetCellContent</connectorId>
+  <version>5.0</version>
+  <icon>sheetster.png</icon>
+  <categories>
+    <category>
+      <name>Sheetster</name>
+	  <icon>org/bonitasoft/connectors/sheetster/sheetster.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setServerURL</setterName>
+      <required />
+      <parameters>
+        <string>http://127.0.0.1:8080</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setUsername</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPassword</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setWorkBookId</setterName>
+      <required />
+      <parameters>
+        <string>5</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setSheetName</setterName>
+      <required />
+      <parameters>
+        <string>Sheet1</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setCell</setterName>
+      <required />
+      <parameters>
+        <string>A1</string>
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs>
+  	<getter>
+      <name>cellContent</name>
+    </getter>
+  </outputs>
+  <pages>
+    <page>
+      <pageId>main</pageId>
+      <widgets>
+      	<text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>serverURL</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <labelId>username</labelId>
+        </text>
+        <password>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[3]"/>
+          <labelId>password</labelId>
+        </password>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[4]"/>
+          <labelId>workBookId</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[5]"/>
+          <labelId>sheetName</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>20</maxChar>
+          <setter reference="/connector/inputs/setter[6]"/>
+          <labelId>cell</labelId>
+        </text>
+      </widgets>
+    </page>
+  </pages>
+</connector>

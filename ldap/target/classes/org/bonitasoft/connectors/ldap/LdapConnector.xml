@@ -1,0 +1,253 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>LdapConnector</connectorId>
+  <icon>database.png</icon>
+  <categories>
+    <category>
+      <name>Ldap</name>
+      <icon>org/bonitasoft/connectors/ldap/database.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setHost</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPort</setterName>
+      <required />
+      <parameters>
+        <long>389</long>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setProtocol</setterName>
+      <required></required>
+      <parameters>
+        <string>LDAP</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setUserName</setterName>
+      <required>password</required>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPassword</setterName>
+      <required>userName</required>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setBaseObject</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setScope</setterName>
+      <required />
+      <parameters>
+        <string>subtree</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setFilter</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setAttributes</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setSizeLimit</setterName>
+      <parameters>
+        <long>500</long>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setTimeLimit</setterName>
+      <parameters>
+        <long>1</long>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setReferralHandling</setterName>
+      <parameters>
+        <string>ignore</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setDerefAliases</setterName>
+      <required />
+      <parameters>
+        <string>always</string>
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs>
+    <getter>
+      <name>ldapAttributeList</name>
+    </getter>
+  </outputs>
+  <pages>
+    <page>
+      <pageId>server</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>20</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>host</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>20</maxChar>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <labelId>port</labelId>
+        </text>
+        <select>
+          <values>
+            <entry>
+              <string>TLS</string>
+              <string>TLS</string>
+            </entry>
+            <entry>
+              <string>LDAPS</string>
+              <string>LDAPS</string>
+            </entry>
+            <entry>
+              <string>LDAP</string>
+              <string>LDAP</string>
+            </entry>
+          </values>
+          <editable>false</editable>
+          <setter reference="/connector/inputs/setter[3]"/>
+          <labelId>protocol</labelId>
+        </select>
+        <text>
+          <size>20</size>
+          <maxChar>20</maxChar>
+          <setter reference="/connector/inputs/setter[4]"/>
+          <labelId>userName</labelId>
+        </text>
+        <password>
+          <size>20</size>
+          <maxChar>20</maxChar>
+          <setter reference="/connector/inputs/setter[5]"/>
+          <labelId>password</labelId>
+        </password>
+      </widgets>
+    </page>
+    <page>
+      <pageId>search</pageId>
+      <widgets>
+        <text>
+          <size>25</size>
+          <maxChar>50</maxChar>
+          <setter reference="/connector/inputs/setter[6]"/>
+          <labelId>baseObject</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>100</maxChar>
+          <setter reference="/connector/inputs/setter[8]"/>
+          <labelId>filter</labelId>
+        </text>
+        <text>
+          <size>50</size>
+          <maxChar>100</maxChar>
+          <setter reference="/connector/inputs/setter[9]"/>
+          <labelId>attributes</labelId>
+        </text>
+        <group>
+          <optional>true</optional>
+          <labelId>advance</labelId>
+          <widgets>
+            <select>
+              <values>
+                <entry>
+                  <string>base</string>
+                  <string>BASE</string>
+                </entry>
+                <entry>
+                  <string>one level</string>
+                  <string>ONELEVEL</string>
+                </entry>
+                <entry>
+                  <string>subtree</string>
+                  <string>SUBTREE</string>
+                </entry>
+              </values>
+              <editable>false</editable>
+              <setter reference="/connector/inputs/setter[7]"/>
+              <labelId>scope</labelId>
+            </select>
+            <text>
+              <size>5</size>
+              <maxChar>10</maxChar>
+              <setter reference="/connector/inputs/setter[10]"/>
+              <labelId>sizeLimit</labelId>
+            </text>
+            <text>
+              <size>5</size>
+              <maxChar>10</maxChar>
+              <setter reference="/connector/inputs/setter[11]"/>
+              <labelId>timeLimit</labelId>
+            </text>
+            <select>
+              <values>
+                <entry>
+                  <string>ignore</string>
+                  <string>ignore</string>
+                </entry>
+                <entry>
+                  <string>follow</string>
+                  <string>follow</string>
+                </entry>
+              </values>
+              <editable>false</editable>
+              <setter reference="/connector/inputs/setter[12]"/>
+              <labelId>referralHandling</labelId>
+            </select>
+            <select>
+              <values>
+                <entry>
+                  <string>searching</string>
+                  <string>SEARCHING</string>
+                </entry>
+                <entry>
+                  <string>never</string>
+                  <string>NEVER</string>
+                </entry>
+                <entry>
+                  <string>always</string>
+                  <string>ALWAYS</string>
+                </entry>
+                <entry>
+                  <string>finding</string>
+                  <string>FINDING</string>
+                </entry>
+              </values>
+              <editable>false</editable>
+              <setter reference="/connector/inputs/setter[13]"/>
+              <labelId>derefAliases</labelId>
+            </select>
+          </widgets>
+        </group>
+      </widgets>
+    </page>
+  </pages>
+</connector>

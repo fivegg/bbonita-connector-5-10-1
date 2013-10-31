@@ -1,0 +1,64 @@
+<connector>
+  <connectorId>SharepointGetListItems</connectorId>
+  <version>5.0</version>
+  <icon>sharepoint.jpg</icon>
+  <categories>
+    <category>
+      <name>Sharepoint</name>
+      <icon>org/bonitasoft/connectors/microsoft/sharepoint/sharepoint.jpg</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setUsername</setterName>
+      <required></required>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPassword</setterName>
+      <required></required>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setListName</setterName>
+      <required></required>
+      <parameters>
+        <string></string>
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs>
+    <getter>
+      <name>xmlResponse</name>
+    </getter>
+  </outputs>
+  <pages>
+    <page>
+      <pageId>Parameters</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>username</labelId>
+        </text>
+        <password>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <labelId>password</labelId>
+        </password>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[3]"/>
+          <labelId>listName</labelId>
+        </text>
+      </widgets>
+    </page>
+  </pages>
+</connector>

@@ -1,0 +1,59 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>SAPRollback</connectorId>
+  <icon>SAPLogo.png</icon>
+  <categories>
+    <category>
+      <name>SAP</name>
+      <icon>org/bonitasoft/connectors/sap/SAPLogo.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setExistingConnectionName</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setRepository</setterName>
+      <required />
+      <parameters>
+        <string>REPOSITORY</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setReleaseClient</setterName>
+      <required />
+      <parameters>
+        <boolean>true</boolean>
+      </parameters>
+    </setter>
+  </inputs>
+  <pages>
+    <page>
+      <pageId>config</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>2</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>existingConnectionName</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>40</maxChar>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <labelId>repository</labelId>
+        </text>
+        <checkbox>
+          <name>releaseClient</name>
+          <value>false</value>
+          <setter reference="/connector/inputs/setter[3]"/>
+          <labelId>releaseClient</labelId>
+        </checkbox>
+      </widgets>
+    </page>
+  </pages>
+</connector>

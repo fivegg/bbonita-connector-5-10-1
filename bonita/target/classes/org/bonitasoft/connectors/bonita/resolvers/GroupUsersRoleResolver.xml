@@ -1,0 +1,45 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>GroupUsers</connectorId>
+  <icon>bonita.png</icon>
+  <categories>
+    <category>
+      <name>Bonita</name>
+      <icon>org/bonitasoft/connectors/bonita/resolvers/bonita.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setGroupPath</setterName>
+      <required />
+      <parameters>
+        <string>/platform</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setIncludingSubGroups</setterName>
+      <parameters>
+        <boolean>false</boolean>
+      </parameters>
+    </setter>
+  </inputs>
+  <pages>
+    <page>
+      <pageId>first</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>100</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>groupPath</labelId>
+        </text>
+        <checkbox>
+          <name>subgroups</name>
+          <value>false</value>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <labelId>subGroups</labelId>
+          </checkbox>
+      </widgets>
+    </page>
+  </pages>
+</connector>

@@ -1,0 +1,3 @@
+SAP = SAP
+ConnectorId = Commit
+Description = Call BAPI_TRANSACTION_COMMIT using an existing connection

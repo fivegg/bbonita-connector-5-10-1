@@ -1,0 +1,78 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>SAPCreateClient</connectorId>
+  <icon>SAPLogo.png</icon>
+  <categories>
+    <category>
+      <name>SAP</name>
+      <icon>org/bonitasoft/connectors/sap/SAPLogo.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setServerType</setterName>
+      <required />
+      <parameters>
+        <string>ApplicationServer</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setClient</setterName>
+      <required />
+      <parameters>
+        <string>000</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setUser</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPassword</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setLanguage</setterName>
+      <required />
+      <parameters>
+        <string>EN</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setHost</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setSystemNumber</setterName>
+      <parameters>
+        <string>00</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setSystemId</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setGroupName</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs>
+    <getter>
+      <name>createdConnectionName</name>
+    </getter>
+  </outputs>
+</connector>

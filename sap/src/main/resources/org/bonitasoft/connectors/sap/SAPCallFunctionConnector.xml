@@ -1,0 +1,144 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>SAPCallFunction</connectorId>
+  <icon>SAPLogo.png</icon>
+  <categories>
+    <category>
+      <name>SAP</name>
+      <icon>org/bonitasoft/connectors/sap/SAPLogo.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setExistingConnectionName</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setUseExitingConnection</setterName>
+      <required />
+      <parameters>
+        <boolean>false</boolean>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setCommitOnSuccess</setterName>
+      <required />
+      <parameters>
+        <boolean>true</boolean>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setRollbackOnFailure</setterName>
+      <required />
+      <parameters>
+        <boolean>true</boolean>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setServerType</setterName>
+      <required />
+      <parameters>
+        <string>ApplicationServer</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setClient</setterName>
+      <required />
+      <parameters>
+        <string>000</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setUser</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPassword</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setLanguage</setterName>
+      <required />
+      <parameters>
+        <string>EN</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setHost</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setSystemNumber</setterName>
+      <parameters>
+        <string>00</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setSystemId</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setGroupName</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setRepository</setterName>
+      <required />
+      <parameters>
+        <string>REPOSITORY</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setFunctionName</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setReleaseClient</setterName>
+      <required />
+      <parameters>
+        <boolean>true</boolean>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setHtmlOutput</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setInputParameters</setterName>
+      <parameters>
+        <list />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setOutputParameters</setterName>
+      <parameters>
+        <list />
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs>
+    <getter>
+      <name>results</name>
+    </getter>
+  </outputs>
+</connector>

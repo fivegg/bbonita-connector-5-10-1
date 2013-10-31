@@ -1,0 +1,38 @@
+<connector>
+  <connectorId>ComplexShellConnector</connectorId>
+  <version>5.0</version>
+  <icon>shell.png</icon>
+  <categories>
+    <category>
+      <name>Script</name>
+      <icon>org/bonitasoft/connectors/scripting/scripting.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setCommand</setterName>
+      <required></required>
+      <parameters>
+        <list/>
+      </parameters>
+    </setter>
+  </inputs>
+  <outputs>
+    <getter>
+      <name>result</name>
+      <metadata/>
+    </getter>
+  </outputs>
+  <pages>
+    <page>
+      <pageId>Command</pageId>
+      <widgets>
+        <list>
+          <labelId>command</labelId>
+          <setter reference="/connector/inputs/setter"/>
+          <maxRows>0</maxRows>
+        </list>
+      </widgets>
+    </page>
+  </pages>
+</connector>

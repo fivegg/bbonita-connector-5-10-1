@@ -1,0 +1,88 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>bonita-connectors</artifactId>
+    <groupId>org.bonitasoft.connectors</groupId>
+    <version>5.10.1</version>
+  </parent>
+
+  <groupId>org.bonitasoft.connectors</groupId>
+  <artifactId>assembly</artifactId>
+  <packaging>pom</packaging>
+
+  <name>Assembly</name>
+
+  <properties>
+    <connectors>bonita,email,twitter,database,ldap,java,scripting,alfresco,webdav,talend,cxf,google,xwiki,jasper,sugar,drools,microsoft/exchange,microsoft/sharepoint,sap,sheetster,cmis,secure-webservice-cxf-2-4-0,salesforce-partner</connectors>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>ant-contrib</groupId>
+      <artifactId>ant-contrib</artifactId>
+      <version>1.0b3</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>build-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <tasks>
+                <taskdef name="for" classname="net.sf.antcontrib.logic.ForTask"
+                  classpathref="maven.runtime.classpath" />
+                <mkdir dir="${project.build.directory}/connectors" />
+                <for list="${connectors}" param="connector">
+                  <sequential>
+                    <mkdir dir="${project.build.directory}/connectors/@{connector}" />
+                    <unzip dest="${project.build.directory}/connectors/@{connector}">
+                      <fileset dir="../@{connector}/target">
+                        <include name="*.zip" />
+                      </fileset>
+                    </unzip>
+                  </sequential>
+                </for>
+
+                <zip destfile="${project.build.directory}/${project.artifactId}-${project.version}.zip"
+                  basedir="${project.build.directory}/connectors" />
+              </tasks>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-install-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>store assembly</id>
+            <phase>install</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${project.build.directory}/${project.artifactId}-${project.version}.zip</file>
+              <groupId>${project.groupId}</groupId>
+              <artifactId>${project.artifactId}</artifactId>
+              <version>${project.version}</version>
+              <packaging>zip</packaging>
+            </configuration>
+          </execution>
+
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

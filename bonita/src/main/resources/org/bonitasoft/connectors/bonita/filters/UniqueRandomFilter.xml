@@ -1,0 +1,11 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>UniqueRandom</connectorId>
+  <icon>bonita.png</icon>
+  <categories>
+    <category>
+      <name>Bonita</name>
+      <icon>org/bonitasoft/connectors/bonita/filters/bonita.png</icon>
+    </category>
+  </categories>
+</connector>

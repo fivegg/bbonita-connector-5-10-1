@@ -1,0 +1,116 @@
+<connector>
+  <version>5.0</version>
+  <connectorId>InformixRR</connectorId>
+  <icon>informix.png</icon>
+  <categories>
+    <category>
+      <name>Database</name>
+      <icon>org/bonitasoft/connectors/database/database.png</icon>
+    </category>
+  </categories>
+  <inputs>
+    <setter>
+      <setterName>setDatabase</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setQuery</setterName>
+      <required />
+      <parameters>
+        <string>SELECT username FROM users</string>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setUsername</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPassword</setterName>
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setHostName</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setPort</setterName>
+      <parameters>
+        <int>1526</int>
+      </parameters>
+    </setter>
+    <setter>
+      <setterName>setDbServer</setterName>
+      <required />
+      <parameters>
+        <string />
+      </parameters>
+    </setter>
+  </inputs>
+  <pages>
+    <page>
+      <pageId>db</pageId>
+      <widgets>
+        <text>
+          <size>20</size>
+          <maxChar>50</maxChar>
+          <setter reference="/connector/inputs/setter[5]"/>
+          <labelId>hostName</labelId>
+        </text>
+        <text>
+          <size>5</size>
+          <maxChar>5</maxChar>
+          <setter reference="/connector/inputs/setter[6]"/>
+          <labelId>port</labelId>
+        </text>
+        <text>
+          <size>30</size>
+          <maxChar>50</maxChar>
+          <setter reference="/connector/inputs/setter"/>
+          <labelId>database</labelId>
+        </text>
+        <text>
+          <size>20</size>
+          <maxChar>50</maxChar>
+          <setter reference="/connector/inputs/setter[7]"/>
+          <labelId>dbServer</labelId>
+        </text>
+        <text>
+          <size>30</size>
+          <maxChar>50</maxChar>
+          <setter reference="/connector/inputs/setter[3]"/>
+          <labelId>username</labelId>
+        </text>
+        <password>
+          <size>30</size>
+          <maxChar>50</maxChar>
+          <setter reference="/connector/inputs/setter[4]"/>
+          <labelId>password</labelId>
+        </password>
+      </widgets>
+    </page>
+    <page>
+      <pageId>qry</pageId>
+      <widgets>
+        <textarea>
+          <rows>10</rows>
+          <columns>60</columns>
+          <maxChar>600</maxChar>
+          <maxCharPerRow>60</maxCharPerRow>
+          <setter reference="/connector/inputs/setter[2]"/>
+          <labelId>query</labelId>
+        </textarea>
+      </widgets>
+    </page>
+  </pages>
+</connector>
